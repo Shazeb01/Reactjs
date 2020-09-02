@@ -1,4 +1,5 @@
-import React,{Fragment,Component} from 'react';
+import React,{Component} from 'react';
+import './Header.css';
 
 class Header extends Component {
 
@@ -6,40 +7,34 @@ class Header extends Component {
         super()
 
         this.state={
-            title: 'React First App',
-            keyword: 'User Text Here'
+            title: 'Style Store',
+            keyword: 'Search'
         }
+    }
+
+    inputChange = (event) => {
+        console.log(event.target.value)
+        this.setState({keyword:event.target.value? event.target.value:"Search"})
     }
 
 
     render(){
+
         return(
-            <Fragment>
-                <div>{this.state.title}</div>
+            <header>
+                <div className="logo">{this.state.title}</div>
                 <center>
-                    <input type='text' />
-                    <p>{this.state.keyword}</p>
+                    <input type='text' onChange={this.inputChange}/>
+                    <div style={{color:'white'}}>{this.state.keyword}</div>
                 <h2>
-                    React app
+                    Fashion Store
                 </h2>
             </center>
             <hr/>
-            </Fragment>
+            </header>
         )
     }
 }
 
-/*const Header = () => {
-    return(
-        <Fragment>
-            <center>
-                <h2>
-                    React app
-                </h2>
-            </center>
-            <hr/>
-        </Fragment>
-    )
-}
-*/
+
 export default Header;

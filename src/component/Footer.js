@@ -5,7 +5,7 @@ const Footer = (copyright) => {
         <div>
             <hr/>
             <center>
-    <h4>&copy; Shazeb {copyright.year} {copyright.month}</h4>
+    <h4>&copy; Shazeb {copyright.year}</h4>
             </center>
         </div>
     )
