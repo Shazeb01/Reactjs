@@ -7,7 +7,7 @@ class Header extends Component {
         super()
 
         this.state={
-            title: 'Style Store',
+            title: 'React Store',
             keyword: 'Search'
         }
     }
@@ -15,6 +15,7 @@ class Header extends Component {
     inputChange = (event) => {
         console.log(event.target.value)
         this.setState({keyword:event.target.value? event.target.value:"Search"})
+        this.props.userText(event.target.value)
     }
 
 
@@ -27,7 +28,7 @@ class Header extends Component {
                     <input type='text' onChange={this.inputChange}/>
                     <div style={{color:'white'}}>{this.state.keyword}</div>
                 <h2>
-                    Fashion Store
+                    Store
                 </h2>
             </center>
             <hr/>
